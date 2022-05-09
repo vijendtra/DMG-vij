@@ -9,6 +9,9 @@ import (
 	"sync"
 )
 
+// Counter Created Counter struct.
+// added sync.Mutex to handle race condition.
+// mutexes must not be copied, so if this struct is passed around, it should be done by pointer.
 type Counter struct {
 	sync.Mutex
 	counter int
